@@ -1,0 +1,33 @@
+{
+  "name": "learning-cloudformation",
+  "version": "1.0.0",
+  "description": "🕵️‍♀️🕵️‍♀️🕵️‍♀️ CloudFormation使ってみる！",
+  "main": "./src/index.ts",
+  "repository": "https://github.com/osawa-koki/learning-cloudformation.git",
+  "author": "osawa-koki <koki@osawa.dev>",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=18.0.0",
+    "yarn": ">=1.22.0"
+  },
+  "scripts": {
+    "dev": "ts-node ./src/index.ts",
+    "start": "ts-node ./src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "lint": "eslint --ext .ts,.js ./src/",
+    "lint:fix": "eslint --fix --ext .ts,.js ./"
+  },
+  "dependencies": {
+    "ts-node": "^10.9.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.9",
+    "@typescript-eslint/eslint-plugin": "^5.52.0",
+    "eslint": "^8.0.1",
+    "eslint-config-standard-with-typescript": "^37.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
+    "eslint-plugin-promise": "^6.0.0",
+    "typescript": "*"
+  }
+}
