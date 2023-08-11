@@ -8,7 +8,7 @@
 # Ref: https://docs.aws.amazon.com/ja_jp/AWSCloudFormation/latest/UserGuide/using-cfn-cli-creating-stack.html
 aws cloudformation deploy \
     --stack-name <stack-name> \
-    --template <template-body>
+    --template <template>
 
 # 例)
 aws cloudformation deploy \
