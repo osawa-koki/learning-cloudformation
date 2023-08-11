@@ -5,5 +5,8 @@
   "main": "./src/index.ts",
   "repository": "https://github.com/osawa-koki/learning-cloudformation.git",
   "author": "osawa-koki <koki@osawa.dev>",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "typescript": "^5.1.6"
+  }
 }
