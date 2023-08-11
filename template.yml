@@ -7,12 +7,17 @@ Resources:
     Type: AWS::S3::Bucket
     DeletionPolicy: Delete
     Properties:
-      BucketName: !Sub "${AWS::StackName}-s3-bucket"
-      PublicAccessBlockConfiguration:
-        BlockPublicAcls: true
-        BlockPublicPolicy: true
-        IgnorePublicAcls: true
-        RestrictPublicBuckets: true
+      BucketName: !Sub ${AWS::StackName}-s3-bucket
+      VersioningConfiguration:
+        Status: Enabled
       Tags:
         - Key: Name
           Value: !Sub "${AWS::StackName}-s3-bucket"
+
+Outputs:
+  S3BucketName:
+    Description: "S3バケット名。"
+    Value: !Ref S3Bucket
+  S3BucketDomainName:
+    Description: "S3バケットエンドポイント。"
+    Value: !GetAtt S3Bucket.DomainName

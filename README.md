@@ -6,13 +6,40 @@
 
 ```shell
 # Ref: https://docs.aws.amazon.com/ja_jp/AWSCloudFormation/latest/UserGuide/using-cfn-cli-creating-stack.html
-aws cloudformation create-stack \
+aws cloudformation deploy \
     --stack-name <stack-name> \
-    --template-body <template-body> \
-    --parameters <parameters>
+    --template <template-body>
 
 # 例)
-aws cloudformation create-stack \
+aws cloudformation deploy \
     --stack-name learning-cloudformation \
-    --template-body file://./template.yml
+    --template ./template.yml
+```
+
+`Output`で指定した値を取得するには、以下のコマンドを実行します。  
+
+```shell
+aws cloudformation describe-stacks --stack-name <stack-name> --query <query> --output <output> --no-cli-pager
+
+# 例) バケット名を取得
+aws cloudformation describe-stacks --stack-name learning-cloudformation --query "Stacks[].Outputs[?OutputKey=='S3BucketName'].OutputValue" --output text --no-cli-pager
+
+# 例) エンドポイントを取得
+aws cloudformation describe-stacks --stack-name learning-cloudformation --query "Stacks[].Outputs[?OutputKey=='S3BucketDomainName'].OutputValue" --output text --no-cli-pager
+```
+
+```shell
+aws s3 ls s3://<S3BucketName>
+
+# 例)
+aws s3 ls s3://learning-cloudformation-s3-bucket
+```
+
+削除するには、以下のコマンドを実行します。  
+
+```shell
+aws cloudformation delete-stack --stack-name <stack-name>
+
+# 例)
+aws cloudformation delete-stack --stack-name learning-cloudformation
 ```
