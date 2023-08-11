@@ -1,0 +1,9 @@
+{
+  "name": "learning-cloudformation",
+  "version": "1.0.0",
+  "description": "🕵️‍♀️🕵️‍♀️🕵️‍♀️ CloudFormation使ってみる！",
+  "main": "./src/index.ts",
+  "repository": "https://github.com/osawa-koki/learning-cloudformation.git",
+  "author": "osawa-koki <koki@osawa.dev>",
+  "license": "Apache-2.0"
+}
