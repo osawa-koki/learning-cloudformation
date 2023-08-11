@@ -43,3 +43,14 @@ aws cloudformation delete-stack --stack-name <stack-name>
 # 例)
 aws cloudformation delete-stack --stack-name learning-cloudformation
 ```
+
+## S3の操作
+
+NodeでS3を操作する簡単なコードを用意しています。  
+`yarn install`してから、以下のコマンドを実行してください。  
+
+```shell
+yarn start
+```
+
+このプログラムを実行する前に、`.env.example`を`.env`にリネームして、環境変数を設定してください。  
