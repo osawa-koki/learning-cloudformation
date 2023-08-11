@@ -6,11 +6,11 @@
   "repository": "https://github.com/osawa-koki/learning-cloudformation.git",
   "author": "osawa-koki <koki@osawa.dev>",
   "license": "Apache-2.0",
+  "dependencies": {
+    "ts-node": "^10.9.1"
+  },
   "devDependencies": {
     "@types/node": "^20.4.9",
     "typescript": "^5.1.6"
-  },
-  "dependencies": {
-    "ts-node": "^10.9.1"
   }
 }
