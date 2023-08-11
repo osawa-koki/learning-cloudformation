@@ -3,6 +3,55 @@ import dotenv from 'dotenv'
 import dayjs from 'dayjs'
 
 (async () => {
+  const prefixes = [
+    'cool',
+    'great',
+    'awesome',
+    'nice',
+    'wonderful',
+    'fantastic',
+    'amazing',
+    'excellent',
+    'fabulous',
+    'splendid',
+    'superb',
+    'terrific',
+    'incredible',
+    'outstanding',
+    'exceptional',
+    'perfect',
+    'marvelous',
+    'phenomenal',
+    'brilliant'
+  ]
+  const animals = [
+    'dog',
+    'cat',
+    'rabbit',
+    'hamster',
+    'goldfish',
+    'turtle',
+    'parrot',
+    'cockatiel',
+    'canary',
+    'budgerigar',
+    'chicken',
+    'duck',
+    'goose',
+    'pigeon',
+    'turkey',
+    'quail',
+    'guinea pig',
+    'chinchilla',
+    'sugar glider',
+    'hedgehog'
+  ]
+  const getRandomName = (): string => {
+    const prefix = prefixes[Math.floor(Math.random() * prefixes.length)]
+    const animal = animals[Math.floor(Math.random() * animals.length)]
+    return `${prefix} ${animal}`
+  }
+
   dotenv.config()
 
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -45,7 +94,7 @@ import dayjs from 'dayjs'
       Bucket: S3_BUCKET_NAME,
       Key: key,
       Body: JSON.stringify({
-        message: 'Hello, World!',
+        message: getRandomName(),
         timestamp: dayjs().format('YYYY-MM-DD HH:mm:ss')
       })
     }
